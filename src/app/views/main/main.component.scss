@@ -1,9 +1,20 @@
+@import '../../../assets/variables.scss';
+
 .main-container {
-    border: 1px solid black;
-    padding: 10rem;
+    border-radius: 5px;
+    border: 1px solid rgba(185, 185, 185, 0.548);
+    padding: 2rem 10rem;
     margin: 5rem 15rem;
     display: flex;
     // justify-content: center;
     // align-items: center;
     flex-direction: column;
+    box-shadow: $box-shadow
+
+
+}    
+
+app-select-upload {
+    display: flex;
+    justify-content: center;
 }

@@ -1,3 +1,17 @@
 .select-upload-container {
-    top: 5rem;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .uploaded-input {
+        width: 250px;
+    }
+
+    .buttons-container {
+        button:first-child {
+            margin-right: 1rem;
+        }
+    }
 }

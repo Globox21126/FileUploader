@@ -1,8 +1,18 @@
 .file-list-view {
     display: flex;
     justify-content: space-between;
+    height: 300px;
 
     .file-list-container {
+        width: 60%;
+        border: 1px solid lightgray;
+        box-sizing: border-box;
 
+        table {
+
+            .icon-td {
+                cursor: pointer;
+            }
+        }
     }
 }

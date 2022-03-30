@@ -1,5 +1,20 @@
-<div class="select-upload-container">
-    <input placeholder="Miejsce na plik" disabled/>
-    <app-button [buttonConfig]="btnConfigSelect" ></app-button>
-    <app-button [buttonConfig]="btnConfigUpload" ></app-button>
+<div class="select-upload-container container">
+    <input class="uploaded-input" [placeholder]="selectedFile ? selectedFile.name : ''" disabled/>
+    <input style="display: none" type="file" (change)="onFileSelect($event)" #hiddenfileinput>
+    <div class="buttons-container">
+        <button
+        class="btn btn-primary"
+        type="button" 
+        [ngStyle]="btnConfigSelect.styles"
+        (click)="hiddenfileinput.click()"
+        >{{ btnConfigSelect.text | uppercase}}</button>
+        <button 
+        class="btn btn-primary"
+        type="button" 
+        [ngStyle]="btnConfigUpload.styles"
+        [disabled]="!selectedFile"
+        (click)="uploadImg()"
+        >{{ btnConfigUpload.text | uppercase}}</button>
+    </div>
 </div>
+
