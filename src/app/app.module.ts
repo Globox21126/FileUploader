@@ -6,21 +6,25 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MainComponent } from './views/main/main.component';
 import { FilelistComponent } from './views/filelist/filelist.component';
-import { ButtonComponent } from './core/components/button/button.component';
 import { SelectUploadComponent } from './views/select-upload/select-upload.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     FilelistComponent,
-    ButtonComponent,
-    SelectUploadComponent
+    SelectUploadComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

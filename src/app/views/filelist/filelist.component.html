@@ -1,4 +1,34 @@
-<div class="file-list-view">
-    <app-button [buttonConfig]="textBtnConfig" ></app-button>
-    <div class="file-list-container">file list view</div>
+<div class="file-list-view container">
+    <button
+        class="btn btn-light"
+        type="button" 
+        [ngStyle]="btnConfig.styles"
+        (click)="getData()"
+    >{{ btnConfig.text | uppercase}}</button>
+    <div class="file-list-container overflow-auto table-responsive">
+      <h3 class="ml-2">Images list:</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dat of sessionService.data | async; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{dat.name}}</td>
+            <td class="icon-td">
+              <button 
+              class="btn btn-danger"
+              type="button"
+              (click)="deleteRecord(dat)">
+              <i class="bi bi-x-circle-fill"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 </div>
